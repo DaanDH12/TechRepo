@@ -1,0 +1,23 @@
+{
+  "name": "techrepo",
+  "version": "1.0.0",
+  "description": "Blok Tech Repository - Daan Honing (500853187)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaanDH12/TechRepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaanDH12/TechRepo/issues"
+  },
+  "homepage": "https://github.com/DaanDH12/TechRepo#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
