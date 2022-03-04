@@ -2,6 +2,7 @@ const express = require('express')
 const { engine } = require('express-handlebars');
 const app = express();
 
+
 const path = require('path');
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
