@@ -1,5 +1,2 @@
-# TechRepo
-Blok Tech Repository - Daan Honing (500853187)
+<section align="center" id="start"><img src="https://i.postimg.cc/MTXPFpcq/Blok-Tech-Logo.png" width="600"></section>
 
-
-Welkom bij Blok Tech! Hier kunt U alle informatie over al mijn vakken voor Blok Tech, zoals Front-End, Back-End en Project Tech
