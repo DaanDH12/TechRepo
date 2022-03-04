@@ -16,4 +16,8 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/registreren', (req, res) => {
+  res.render('registreren');
+});
+
 app.listen(3000);

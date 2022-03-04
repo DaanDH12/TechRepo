@@ -24,7 +24,6 @@ section:first-of-type {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    aspect-ratio: 1 / 1.5;
 }
 
 section:first-of-type section:first-of-type {
@@ -75,4 +74,59 @@ p:first-child {
     font-weight: 600;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     color: black;
+}
+
+body.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+body.login h2 {
+    text-align: center;
+    margin-top: 1em;
+    }
+
+body.login section p {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+body.login section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body.login section form {
+    padding: 0.5em;
+}
+
+body.login section form label {
+    display: block;
+    margin: 0.2em;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+
+body.login section form input {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    margin-bottom: 0.5em;
+    box-sizing: border-box;
+    color: black;
+    width: 100%;
+    border-radius: 1em;
+    padding: 1em;
+    border: none;
+    box-shadow: 3px solid;
+    background-color: lightblue; 
+}
+
+body.login section form input[type=submit] {
+    background-color: rgb(24, 137, 156);
+    color: white;
 }

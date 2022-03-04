@@ -1,10 +1,16 @@
-<h2>Cheers!</h2>
-<section>
+<body class="login">
     <section>
-        <p>Name</p>
+        <h2>Inloggen</h2>
+
+        <form action="/action_page.php">
+            <label for="fname">Username</label><br>
+            <input type="text" id="username" name="username" placeholder="Name" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br><br>
+            <input type="submit" value="Inloggen" required>
+        </form>
+
+        <p>Nog geen account aangemaakt? <br><a href="/registreren">Meld je nu aan!</a></p>
+
     </section>
-        <section>
-            <div></div>
-            <div></div>
-        </section>
-</section>
+</body>
