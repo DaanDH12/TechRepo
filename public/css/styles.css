@@ -137,7 +137,7 @@ body.login section form input {
   padding: 1em;
   border: none;
   box-shadow: 3px solid;
-  background-color: lightblue;
+  background-color: white;
 }
 
 body.login section form input[type=submit] {

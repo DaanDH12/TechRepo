@@ -1,20 +1,17 @@
-<body class="login">
+<body class="registreren login">
     <section>
         <h2>Registreren</h2>
 
         <form action="/registreren" method="post">
-            <label for="fname">Volledige naam</label><br>
-            <input type="text" id="username" name="username" placeholder="Volledige Naam" required><br>
-            <label for="fname">Gebruikersnaam</label><br>
-            <input type="text" id="username" name="username" placeholder="Naam" required><br>
-            <label for="fname">Email</label><br>
-            <input type="text" id="username" name="username" placeholder="E-mailadres" required><br>
-            <label for="password">Wachtwoord</label><br>
-            <input type="password" id="password" name="password" placeholder="Wachtwoord"><br><br>
-            <input type="submit" value="Inloggen" required>
+            <input type="text" id="username" name="username" placeholder="Gebruikersnaam" required><br>
+            <label for="fname"></label><br>
+            <input type="text" id="email" name="email" placeholder="E-mailadres" required><br>
+            <label for="password"></label><br>
+            <input type="password" id="password" name="password" placeholder="Wachtwoord"  required><br><br>
+            <input type="submit" value="Inloggen">
         </form>
 
-        <p>Nog geen account aangemaakt? <br><a href="/registreren">Meld je nu aan!</a></p>
+        <p>Al een account gemaakt? <br><a href="/">Log nu in!</a></p>
 
     </section>
 </body>
