@@ -2,7 +2,8 @@ const express = require('express')
 const { engine } = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser')
-const port = process.env.PORT || PORT
+
+const Port = process.env.PORT || 5000
 
 // create application/json parser
 var jsonParser = bodyParser.json()

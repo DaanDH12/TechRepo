@@ -4,7 +4,7 @@
   "description": "Blok Tech Repository - Daan Honing (500853187)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js & npm run sass",
     "sass": "sass --watch source/scss:public/css"
   },
