@@ -39,4 +39,4 @@ app.post ('/registreren', urlencodedParser, (req, res) => {
   res.send('Gebruikersnaam: ' + req.body.username + '<br>Email: ' + req.body.email + '<br>Wachtwoord: ' + req.body.password)
 })
 
-app.listen(port);
+app.listen(3000);
