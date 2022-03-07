@@ -2,6 +2,13 @@ const express = require('express')
 const { engine } = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser')
+const port = process.env.PORT || PORT
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const path = require('path');
 app.use('/static', express.static(path.join(__dirname, 'public')));
@@ -23,14 +30,8 @@ app.get('/registreren', (req, res) => {
 
 // bodyparser codes 
 
-app.use(bodyParser.urlencoded({ extended: false }))
-
-app.use(bodyParser.json())
-
-app.use(function (req, res) {
-  res.setHeader('Content-Type', 'text/plain')
-  res.write('you succesfully logged in:\n')
-  res.end(JSON.stringify(req.body, null, 2))
+app.post ('/inloggen', urlencodedParser, (req, res) => {
+  res.send('Gebruikersnaam: ' + req.body.username + '<br>Wachtwoord: ' + req.body.password)
 })
 
 app.listen(3000);

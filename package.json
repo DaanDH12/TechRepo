@@ -4,7 +4,9 @@
   "description": "Blok Tech Repository - Daan Honing (500853187)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js & npm run sass",
+    "sass": "sass --watch source/scss:public/css"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,8 @@
     "multer": "^1.4.4"
   },
   "devDependencies": {
-    "eslint": "^8.10.0"
+    "eslint": "^8.10.0",
+    "nodemon": "^2.0.15",
+    "sass": "^1.49.9"
   }
 }
