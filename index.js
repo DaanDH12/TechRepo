@@ -3,7 +3,7 @@ const { engine } = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser')
 
-const Port = process.env.PORT || 5000
+const port = process.env.PORT || 5000
 
 // create application/json parser
 var jsonParser = bodyParser.json()
@@ -35,4 +35,4 @@ app.post ('/inloggen', urlencodedParser, (req, res) => {
   res.send('Gebruikersnaam: ' + req.body.username + '<br>Wachtwoord: ' + req.body.password)
 })
 
-app.listen(3000);
+app.listen(port);
