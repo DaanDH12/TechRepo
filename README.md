@@ -15,12 +15,27 @@
 <h2>⚙️ Installatie</h2>
   <p>Om het project te installeren moet je de volgende stappen doorvoeren. Maak voordat je begint een map aan en werk hier in. Het is niet aangeraden om dit zonder een map te doen aangezien het dan allemaal bestanden los in een andere map stopt.</p>
   
+   1. Clone de Github in een mapje naar keuze, lokaal op de computer. Hierin kan je de repository lokaal bekijken, bewerken en aanpassen!
+  ```sh
+  git clone https://github.com/DaanDH12/TechRepo.git
+  ```
+  2. Installeer de NPM Packages. Door deze command te gebruiken installeert de terminal alle packages automatisch in de repository, zodat alles werkt.
+  ```sh
+  npm install
+  ```
+  3. Start de server op. Via deze command kan de gebruiker de server lokaal opstarten voor bijvoorbeeld test purposes of kijken hoe het project in zijn werk gaat.
+  ```sh
+  npm run start
+  ```
+  
   
  <h3>📃 Bronnen:</h3>
   <ul>
     <li><a href="https://nodejs.org/en/" target="_blank">Node.js</a></li>
     <li><a href="https://expressjs.com/" target="_blank">Express</a></li>
     <li><a href="https://www.npmjs.com/package/express-handlebars" target="_blank">Express-Handlebars</a></li>
+    <li><a href="https://www.npmjs.com/package/body-parser" target="_blank">Body-Parser</a></li>
+  <li><a href="https://www.npmjs.com/package/multer" target="_blank">Multer</a></li>
     <li>HTML5/CSS3/JavaScript</li>
   </ul>
   
