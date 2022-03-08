@@ -2,25 +2,29 @@ const express = require('express')
 const { engine } = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser')
-const uri = process.env.MONGODB_URI;
+const connectDB = require("./config/db")
+const path = require('path');
+const port = process.env.PORT || 1337
+require('dotenv') .config();
 
-const port = process.env.PORT || 5000
-
-// create application/json parser
-var jsonParser = bodyParser.json()
+connectDB();
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(bodyParser.urlencoded({ extended: false}))
+app.use(bodyParser.json())
 
-const path = require('path');
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.engine('.hbs', engine({
   extname: '.hbs',
   defaultLayout: 'main'
 }));
+
 app.set('view engine', '.hbs');
 app.set("views", "./views");
+
+
+
 
 app.get('/', (req, res) => {
   res.render('index');
@@ -32,12 +36,14 @@ app.get('/registreren', (req, res) => {
 
 // bodyparser codes 
 
-app.post ('/inloggen', urlencodedParser, (req, res) => {
+app.post ('/inloggen', (req, res) => {
   res.send('Gebruikersnaam: ' + req.body.username + '<br>Wachtwoord: ' + req.body.password)
 })
 
-app.post ('/registreren', urlencodedParser, (req, res) => {
-  res.send('Gebruikersnaam: ' + req.body.username + '<br>Email: ' + req.body.email + '<br>Wachtwoord: ' + req.body.password)
-})
+app.post ('/registreren' , async (req, res) => {
+  console.log('De gegevens zijn succesvol opgehaald', req.body)
+  res.redirect('/')
+
+});
 
 app.listen(port);
