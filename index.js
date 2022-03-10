@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const connectDB = require("./config/db")
 const path = require('path');
 const port = process.env.PORT || 1337
+const User = require("./models/User")
 require('dotenv') .config();
 
 connectDB();
@@ -42,8 +43,15 @@ app.post ('/inloggen', (req, res) => {
 
 app.post ('/registreren' , async (req, res) => {
   console.log('De gegevens zijn succesvol opgehaald', req.body)
-  res.redirect('/')
+  const newUser = new User (req.body);
 
+  newUser.save((error) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).redirect('/registreren');
+    }
+    return res.status(200).redirect('/profielaanmaken');
+});
 });
 
 app.listen(port);
