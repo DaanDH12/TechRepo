@@ -14,6 +14,88 @@ body {
     background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(65, 104, 108, 1) 0%, rgba(56, 155, 163, 1) 53%, rgba(0, 212, 255, 1) 100%);
 }
 
+p:first-child {
+    position: absolute;
+    bottom: 0;
+    left: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header img {
+    width: 150px;
+}
+
+header p {
+    font-size: 2.5em;
+    margin-top: -1em;
+    font-weight: 600;
+    -webkit-text-stroke: 1px black;
+}
+
+body.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+body.login h2 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+body.login section p {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+body.login section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body.login section form {
+    padding: 0.5em;
+}
+
+body.login section form label {
+    display: block;
+    margin: 0.2em;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+
+body.login section form input {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0.5em;
+    box-sizing: border-box;
+    color: black;
+    width: 100%;
+    border-radius: 1em;
+    padding: 1em;
+    border: none;
+    box-shadow: 3px solid;
+    background-color: lightblue;
+}
+
+body.login section form input[type=submit] {
+    background-color: rgb(24, 137, 156);
+    color: white;
+}
+
 section:first-of-type {
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -64,86 +146,4 @@ section:first-of-type section:nth-child(2) {
     flex-direction: row;
     justify-content: space-around;
     margin: 1em;
-}
-
-p:first-child {
-    position: absolute;
-    bottom: 0;
-    left: 1em;
-    font-size: 1.5em;
-    font-weight: 600;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    color: black;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header img{
-    width: 150px;
-}
-
-header p {
-    font-size: 2.5em;
-    margin-top: -1em;
-    font-weight: 600;
-    -webkit-text-stroke: 1px black;
-}
-
-body.login {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
-body.login h2 {
-    text-align: center;
-    margin-top: 1em;
-    }
-
-body.login section p {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-body.login section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-body.login section form {
-    padding: 0.5em;
-}
-
-body.login section form label {
-    display: block;
-    margin: 0.2em;
-    font-size: 1.25em;
-    font-weight: 600;
-}
-
-
-body.login section form input {
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
-    margin-bottom: 0.5em;
-    box-sizing: border-box;
-    color: black;
-    width: 100%;
-    border-radius: 1em;
-    padding: 1em;
-    border: none;
-    box-shadow: 3px solid;
-    background-color: lightblue; 
-}
-
-body.login section form input[type=submit] {
-    background-color: rgb(24, 137, 156);
-    color: white;
 }
