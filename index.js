@@ -6,7 +6,7 @@ const connectDB = require("./config/db")
 const path = require('path');
 const port = process.env.PORT || 1337
 const User = require("./models/User")
-const Bcrypt = require("Bcrypt")
+const bcrypt = require("bcrypt")
 const saltRounds = 10
 require('dotenv') .config();
 
@@ -48,7 +48,7 @@ app.post ('/inloggen', async (req, res) => {
   try {
     const checkuser = await User.findOne({ username: req.body.username });
     if (checkuser) {
-      const vergelijkwachtwoord = await Bcrypt.compare(req.body.password, checkuser.password);
+      const vergelijkwachtwoord = await bcrypt.compare(req.body.password, checkuser.password);
       if (vergelijkwachtwoord) {
         console.log("Inloggen voltooid!")
         res.redirect("/profielpagina")
@@ -65,7 +65,7 @@ app.post ('/inloggen', async (req, res) => {
 
 app.post ('/registreren' , async (req, res) => {
   console.log('De gegevens zijn succesvol opgehaald')
-  const wachtwoord = await Bcrypt.hash(req.body.password, saltRounds)
+  const wachtwoord = await bcrypt.hash(req.body.password, saltRounds)
   const newUser = new User ({
     username: req.body.username,
     email: req.body.email,
