@@ -47,4 +47,9 @@ router.post ('/inloggen', async (req, res) => {
   });
   });
 
+  router.post('/uitloggen', (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+});
+
   module.exports = router
