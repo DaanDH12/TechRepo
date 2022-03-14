@@ -43,7 +43,7 @@ router.post ('/inloggen', async (req, res) => {
         console.log(error);
         return res.status(500).redirect('/registreren');
       }
-      return res.status(200).redirect('/profielaanmaken');
+      return res.status(200).redirect('/');
   });
   });
 
