@@ -51,6 +51,7 @@ app.post ('/inloggen', async (req, res) => {
       const vergelijkwachtwoord = await Bcrypt.compare(req.body.password, checkuser.password);
       if (vergelijkwachtwoord) {
         console.log("Inloggen voltooid!")
+        res.redirect("/profielpagina")
       } else {
         console.error("Foute gebruikersnaam of wachtwoord")
       }
