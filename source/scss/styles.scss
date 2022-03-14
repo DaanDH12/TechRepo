@@ -34,7 +34,7 @@ header img {
     width: 150px;
 }
 
-header p {
+header h1 {
     font-size: 2.5em;
     margin-top: -1em;
     font-weight: 600;
@@ -88,10 +88,29 @@ body.login section form input {
     padding: 1em;
     border: none;
     box-shadow: 3px solid;
-    background-color: lightblue;
 }
 
 body.login section form input[type=submit] {
+    background-color: rgb(24, 137, 156);
+    color: white;
+}
+
+body.profielpagina section form input {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    color: black;
+    width: 90%;
+    border-radius: 1em;
+    padding: 1em;
+    border: none;
+    box-shadow: 3px solid;
+}
+
+body.profielpagina section form input[type=submit] {
     background-color: rgb(24, 137, 156);
     color: white;
 }
@@ -118,7 +137,6 @@ section:first-of-type section:first-of-type {
     background-position: center;
     width: 85%;
     aspect-ratio: 1 / 1.5;
-    background-image: url("/static/images/ijwit.png");
 }
 
 section:first-of-type section:nth-child(2) div:first-of-type {
@@ -146,4 +164,18 @@ section:first-of-type section:nth-child(2) {
     flex-direction: row;
     justify-content: space-around;
     margin: 1em;
+}
+
+body.profielpagina .profileafbeelding {
+    border-radius: 50%;
+    width: 40%;
+    margin: 1em 2em 2em 2em;
+}
+
+body.profielpagina p {
+    padding: 10px 3px;
+    margin: 1em;
+    background-color: white;
+    color: black;
+    border-radius: 1em;
 }

@@ -6,6 +6,8 @@ const connectDB = require("./config/db")
 const path = require('path');
 const port = process.env.PORT || 1337
 const User = require("./models/User")
+const Bcrypt = require("Bcrypt")
+const saltRounds = 10
 require('dotenv') .config();
 
 connectDB();
@@ -35,15 +37,39 @@ app.get('/registreren', (req, res) => {
   res.render('registreren');
 });
 
+app.get('/profielpagina', (req, res) => {
+  res.render('profielpagina');
+});
+
+
 // bodyparser codes 
 
-app.post ('/inloggen', (req, res) => {
-  res.send('Gebruikersnaam: ' + req.body.username + '<br>Wachtwoord: ' + req.body.password)
+app.post ('/inloggen', async (req, res) => {
+  try {
+    const checkuser = await User.findOne({ username: req.body.username });
+    if (checkuser) {
+      const vergelijkwachtwoord = await Bcrypt.compare(req.body.password, checkuser.password);
+      if (vergelijkwachtwoord) {
+        console.log("Inloggen voltooid!")
+      } else {
+        console.error("Foute gebruikersnaam of wachtwoord")
+      }
+    } else {
+      console.error("Foute gebruikersnaam of wachtwoord")
+    }
+  } catch (error) {
+    console.error(error);
+  }
 })
 
 app.post ('/registreren' , async (req, res) => {
-  console.log('De gegevens zijn succesvol opgehaald', req.body)
-  const newUser = new User (req.body);
+  console.log('De gegevens zijn succesvol opgehaald')
+  const wachtwoord = await Bcrypt.hash(req.body.password, saltRounds)
+  const newUser = new User ({
+    username: req.body.username,
+    email: req.body.email,
+    password: wachtwoord
+  });
 
   newUser.save((error) => {
     if (error) {
