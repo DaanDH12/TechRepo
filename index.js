@@ -25,7 +25,6 @@ app.use(session({
 }))
 
 // Geeft aan dat ik Handlebars kan gebruiken en lezen
-
 app.engine('.hbs', engine({
   extname: '.hbs',
   defaultLayout: 'main'

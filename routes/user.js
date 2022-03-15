@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt")
 const saltRounds = 10
 let session
 
-
+// Checken of gegevens uit de database kloppen om in te loggen
 router.post ('/inloggen', async (req, res) => {
     try {
       const checkuser = await User.findOne({ username: req.body.username });
@@ -28,7 +28,8 @@ router.post ('/inloggen', async (req, res) => {
       console.error(error);
     }
   })
-  
+
+  // Maakt een account aan die opslaat in de database
   router.post ('/registreren' , async (req, res) => {
     console.log('De gegevens zijn succesvol opgehaald')
     const wachtwoord = await bcrypt.hash(req.body.password, saltRounds)
@@ -47,15 +48,27 @@ router.post ('/inloggen', async (req, res) => {
   });
   });
 
+
+// Zorgt ervoor dat de session van een User stopt
   router.post('/uitloggen', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
 
+// Deze verwijdert het account uit de database
 router.post('/profiel', (req, res) => {
     console.log(req.body.username)
     User.find({ username: req.body.username }).remove().exec();
     res.redirect('/');
 });
+
+
+// Update de data uit de database van een gebruiker
+router.post('/bijwerken', (req, res) => {
+    session = req.session;
+    User.updateOne({ username: session.username }, { username: req.body.username, email: req.body.email }).exec();
+    session.username = req.body.username;
+    res.redirect('/profielpagina');
+})
 
   module.exports = router

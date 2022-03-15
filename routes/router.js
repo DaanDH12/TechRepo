@@ -3,7 +3,7 @@ const User = require("../models/User");
 const router = express.Router()
 let session
 
-
+// router.get zorgt ervoor dat de pagina goed gelinkt wordt
 router.get('/', (req, res) => {
     res.render('index');
   });
@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
     res.render('registreren');
   });
   
+  // de profielpagina is alleen toegankelijk als de gegevens kloppen en een session wordt gestart
   router.get('/profielpagina', (req, res) => {
     session = req.session;
     if (!session.username) {
