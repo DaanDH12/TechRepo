@@ -36,4 +36,8 @@ app.set("views", "./views");
 app.use("/",router)
 app.use("/",user)
 
+app.get('*', (req, res) => {
+  res.render('404');
+});
+
 app.listen(port);

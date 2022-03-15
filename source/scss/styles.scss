@@ -201,6 +201,22 @@ body.bierpagina {
     }
 }
 
+// Voegt styling toe aan de 404 pagina
+body.error404 {
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+        width: 50%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
 // Voegt styling toe aan alle sections, met betrekking op de glassmorphism style
 section:first-of-type {
     border: 1px solid rgba(255, 255, 255, 0.18);
