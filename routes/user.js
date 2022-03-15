@@ -2,55 +2,59 @@ const express = require("express")
 const router = express.Router()
 const User = require("../models/User")
 const bodyparser = require("body-parser")
-router.use(bodyparser.urlencoded({extended:true}))
+router.use(bodyparser.urlencoded({
+    extended: true
+}))
 const bcrypt = require("bcrypt")
 const saltRounds = 10
 let session
 
 // Checken of gegevens uit de database kloppen om in te loggen
-router.post ('/inloggen', async (req, res) => {
+router.post('/inloggen', async (req, res) => {
     try {
-      const checkuser = await User.findOne({ username: req.body.username });
-      if (checkuser) {
-        const vergelijkwachtwoord = await bcrypt.compare(req.body.password, checkuser.password);
-        if (vergelijkwachtwoord) {
-          console.log("Inloggen voltooid!")
-          session = req.session 
-          session.username = req.body.username
-          res.redirect("/profielpagina")
+        const checkuser = await User.findOne({
+            username: req.body.username
+        });
+        if (checkuser) {
+            const vergelijkwachtwoord = await bcrypt.compare(req.body.password, checkuser.password);
+            if (vergelijkwachtwoord) {
+                console.log("Inloggen voltooid!")
+                session = req.session
+                session.username = req.body.username
+                res.redirect("/profielpagina")
+            } else {
+                console.error("Foute gebruikersnaam of wachtwoord")
+            }
         } else {
-          console.error("Foute gebruikersnaam of wachtwoord")
+            console.error("Foute gebruikersnaam of wachtwoord")
         }
-      } else {
-        console.error("Foute gebruikersnaam of wachtwoord")
-      }
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
-  })
+})
 
-  // Maakt een account aan die opslaat in de database
-  router.post ('/registreren' , async (req, res) => {
+// Maakt een account aan die opslaat in de database
+router.post('/registreren', async (req, res) => {
     console.log('De gegevens zijn succesvol opgehaald')
     const wachtwoord = await bcrypt.hash(req.body.password, saltRounds)
-    const newUser = new User ({
-      username: req.body.username,
-      email: req.body.email,
-      password: wachtwoord
+    const newUser = new User({
+        username: req.body.username,
+        email: req.body.email,
+        password: wachtwoord
     });
-  
+
     newUser.save((error) => {
-      if (error) {
-        console.log(error);
-        return res.status(500).redirect('/registreren');
-      }
-      return res.status(200).redirect('/');
-  });
-  });
+        if (error) {
+            console.log(error);
+            return res.status(500).redirect('/registreren');
+        }
+        return res.status(200).redirect('/');
+    });
+});
 
 
 // Zorgt ervoor dat de session van een User stopt
-  router.post('/uitloggen', (req, res) => {
+router.post('/uitloggen', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
@@ -58,7 +62,9 @@ router.post ('/inloggen', async (req, res) => {
 // Deze verwijdert het account uit de database
 router.post('/profiel', (req, res) => {
     console.log(req.body.username)
-    User.find({ username: req.body.username }).remove().exec();
+    User.find({
+        username: req.body.username
+    }).remove().exec();
     res.redirect('/');
 });
 
@@ -66,9 +72,14 @@ router.post('/profiel', (req, res) => {
 // Update de data uit de database van een gebruiker
 router.post('/bijwerken', (req, res) => {
     session = req.session;
-    User.updateOne({ username: session.username }, { username: req.body.username, email: req.body.email }).exec();
+    User.updateOne({
+        username: session.username
+    }, {
+        username: req.body.username,
+        email: req.body.email
+    }).exec();
     session.username = req.body.username;
     res.redirect('/profielpagina');
 })
 
-  module.exports = router
+module.exports = router

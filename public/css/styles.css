@@ -30,9 +30,11 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
 header img {
   width: 9.375em;
 }
+
 header h1 {
   -webkit-text-stroke: 1px black;
   font-size: 2.5em;
@@ -55,22 +57,27 @@ body.algemeen {
   justify-content: center;
   flex-direction: column;
 }
+
 body.algemeen h2 {
   text-align: center;
   margin-top: 1em;
 }
+
 body.algemeen section {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 body.algemeen section p {
   text-align: center;
   margin-bottom: 1em;
 }
+
 body.algemeen section form {
   padding: 0.5em;
 }
+
 body.algemeen section form input {
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -84,10 +91,12 @@ body.algemeen section form input {
   border-radius: 1em;
   padding: 1em;
 }
+
 body.algemeen section form input[type=submit] {
   background-color: #18899c;
   color: white;
 }
+
 body.algemeen section form label {
   display: block;
   margin: 0.2em;
@@ -109,6 +118,7 @@ body.profielpagina a img:first-of-type {
   left: 0;
   padding: 0.5em;
 }
+
 body.profielpagina section .profileafbeelding {
   box-sizing: border-box;
   margin-left: 30%;
@@ -117,6 +127,7 @@ body.profielpagina section .profileafbeelding {
   border-radius: 50%;
   width: 40%;
 }
+
 body.profielpagina section form:first-of-type input {
   display: block;
   background-image: url("https://i.postimg.cc/k4BnxPNJ/logout.png");
@@ -132,6 +143,7 @@ body.profielpagina section form:first-of-type input {
   right: 0;
   padding: 0.5em;
 }
+
 body.profielpagina section form input {
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -145,11 +157,13 @@ body.profielpagina section form input {
   border-radius: 1em;
   padding: 1em;
 }
+
 body.profielpagina section form input[type=submit] {
   color: white;
   margin: 0em 0em 2em 1em;
   background-color: #18899c;
 }
+
 body.profielpagina section form:last-of-type p {
   background-color: white;
   color: black;
@@ -173,6 +187,7 @@ section:first-of-type {
   border-radius: 10px;
   width: 100%;
 }
+
 section:first-of-type section:first-of-type {
   display: flex;
   justify-content: center;
@@ -184,12 +199,14 @@ section:first-of-type section:first-of-type {
   width: 85%;
   aspect-ratio: 1/1.5;
 }
+
 section:first-of-type section:nth-child(2) {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 1em;
 }
+
 section:first-of-type section:nth-child(2) div:first-of-type {
   background: #fff;
   border: 0.2em solid;
@@ -199,6 +216,7 @@ section:first-of-type section:nth-child(2) div:first-of-type {
   height: 2em;
   padding: 0.5em;
 }
+
 section:first-of-type section:nth-child(2) div:nth-child(2) {
   background: #fff;
   border: 0.2em solid;
