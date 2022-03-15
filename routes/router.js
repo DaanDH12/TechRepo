@@ -1,4 +1,5 @@
-const express = require("express")
+const express = require("express");
+const User = require("../models/User");
 const router = express.Router()
 let session
 
@@ -16,9 +17,13 @@ router.get('/', (req, res) => {
     if (!session.username) {
         res.redirect('/');
     } else {
-        res.render('profielpagina', {'title': 'Profielpagina | Cheers'});
-        console.log(req.session)
+        User.find({ username: session.username }).then((documents) => {
+        let username = documents.map(user => user.username);
+        let email = documents.map(user => user.email);
+        res.render('profielpagina', {'title': 'Profielpagina | Cheers', username: username, email: email});
+        })
     }
   });
+
 
   module.exports = router

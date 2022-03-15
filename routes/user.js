@@ -52,4 +52,10 @@ router.post ('/inloggen', async (req, res) => {
     res.redirect('/');
 });
 
+router.post('/profiel', (req, res) => {
+    console.log(req.body.username)
+    User.find({ username: req.body.username }).remove().exec();
+    res.redirect('/');
+});
+
   module.exports = router
