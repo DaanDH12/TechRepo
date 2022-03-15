@@ -25,5 +25,9 @@ router.get('/', (req, res) => {
     }
   });
 
+  router.get('/bierpagina', (req, res) => {
+    res.render('bierpagina');
+  });
+
 
   module.exports = router
