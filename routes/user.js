@@ -24,12 +24,15 @@ router.post('/inloggen', async (req, res) => {
                 res.redirect("/profielpagina")
             } else {
                 console.error("Foute gebruikersnaam of wachtwoord")
+                res.redirect("/")
             }
         } else {
             console.error("Foute gebruikersnaam of wachtwoord")
+            res.redirect("/")
         }
     } catch (error) {
         console.error(error);
+        res.redirect("/")
     }
 })
 
