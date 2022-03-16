@@ -44,6 +44,9 @@
   
   <p>De overige bronnen zijn te vinden bij het kopje "Resources", in mijn wiki!</p>
   
-  
+   <h3>🏳️ Licentie:</h3>
+   <p>Er wordt gebruik gemaakt van de <a href="https://github.com/DaanDH12/TechRepo/blob/main/LICENSE">MIT</a> licentie op mijn TechRepo</p>
+   
+ 
 
 <img alt="animationwaves" src="/readmefiles/waves.svg">
