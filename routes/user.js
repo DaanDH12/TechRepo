@@ -63,10 +63,11 @@ router.post('/uitloggen', (req, res) => {
 });
 
 // Deze verwijdert het account uit de database
-router.post('/profiel', (req, res) => {
-    console.log(req.body.username)
+router.post('/verwijdergebruiker', (req, res) => {
+    session = req.session
+    console.log(session.username)
     User.find({
-        username: req.body.username
+        username: session.username
     }).remove().exec();
     res.redirect('/');
 });
