@@ -66,9 +66,7 @@ router.post('/uitloggen', (req, res) => {
 router.post('/verwijdergebruiker', (req, res) => {
     session = req.session
     console.log(session.username)
-    User.find({
-        username: session.username
-    }).remove().exec();
+    User.find({ username: session.username }).remove().exec();
     res.redirect('/');
 });
 
