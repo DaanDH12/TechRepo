@@ -42,6 +42,8 @@
     <li>HTML5/CSS3/JavaScript</li>
   </ul>
   
+  <p>De overige bronnen zijn te vinden bij het kopje "Resources", in mijn wiki!</p>
+  
   
 
 <img alt="animationwaves" src="/readmefiles/waves.svg">
